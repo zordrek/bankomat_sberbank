@@ -37,7 +37,8 @@ public class MainMenu {
         ReadCard read = new ReadCard();
 
         WriteCard write = new WriteCard();
-        write.write();
+        String text = write.write(Share.patchtocard());
+        //write.write();
 
         read.readafter();
     }

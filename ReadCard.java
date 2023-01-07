@@ -23,8 +23,8 @@ public class ReadCard {
             // Закрываем сканнер
             scan.close();
             // Возвращаем содержимое файла
-
             return text;
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;
