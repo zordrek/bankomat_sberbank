@@ -11,6 +11,10 @@ public class ChangeBalance {
         Scanner instepx = new Scanner(System.in);
         String newbalance = instepx.nextLine();
         var num2 = Double.parseDouble(newbalance);
+        if (num2 > num) {
+            System.out.println("Недостаточно средств");
+            num2 = 0;
+        }
         double total = num - num2;
         String str = Double.toString(total);
         return str;
