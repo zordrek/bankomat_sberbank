@@ -7,21 +7,38 @@ import java.nio.file.Files;
 
 public class ReadCard {
     public static String read(String filename) {
+
         try {
+           /* FileReader fr = new FileReader("file.txt");
+            int c;
+            while ((c = fr.read()) != -1) {
+                char character = (char) c;
+                // do something with the character
+            }
+            fr.close();
+            */
+
             // Создаем объект файла
             File file = new File(Share.patchtocard());
             // Создаем объект FileReader для чтения файла
             FileReader fr = new FileReader(file);
             // Создаем объект Scanner для считывания файла
-            Scanner scan = new Scanner(fr);
+            //Scanner scan = new Scanner(fr);
             // Переменная для хранения содержимого файла
             String text = "";
             // Считываем файл построчно
-            while (scan.hasNextLine()) {
-                text += scan.nextLine() + "\n";
+           // while (scan.hasNextLine()) {
+           //     text =+ scan.nextLine();
+            int c = 0;
+            while ((c = fr.read()) != -1) {
+                char character = (char) c;
+                int i = Character.digit(c, 10);
+                String str = Integer.toString(i);
+                text += str;
             }
+            fr.close();
             // Закрываем сканнер
-            scan.close();
+            //scan.close();
             // Возвращаем содержимое файла
             return text;
 
