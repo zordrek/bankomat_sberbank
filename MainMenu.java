@@ -35,11 +35,6 @@ public class MainMenu {
             nextorstop.nextorstop();
         }
 
-        //ReadCard read = new ReadCard();
 
-
-        //write.write();
-
-        //read.readafter();
     }
 }
