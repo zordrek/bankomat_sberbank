@@ -2,11 +2,11 @@ package sberbank;
 
 import java.sql.*;
 
-class CardFromDB {
+public class CardBalance {
     ReadCard rc = new ReadCard();
     int read_pin = Integer.parseInt(rc.read(Share.patchtocard()));
 
-    String readDB() {
+    String balance() {
         String pub_return = "";
         Connection connection = null;
         try {
@@ -21,7 +21,7 @@ class CardFromDB {
             Statement statement = connection.createStatement();
 
             // Step 4: Execute a query.
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM card WHERE pin=" + read_pin);
+            ResultSet resultSet = statement.executeQuery("SELECT * from card where pin =" + read_pin);
 
             // Step 5: Process the results.
             while (resultSet.next()) {
@@ -50,5 +50,6 @@ class CardFromDB {
             }
         }
         return pub_return;
+
     }
 }

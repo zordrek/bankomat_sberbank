@@ -5,41 +5,23 @@ import java.nio.file.Files;
 
 public class WriteCard {
     //public static void write() {
-    public static String writeminus() {
+    public static void writeminus() {
         try {
-            // Путь к файлу
-            String filePath = Share.patchtocard();
-            // Строка, которую будем записывать в файл
-            //String content = "2548";
-            String content = ChangeBalance.nowmuchminus();
-            // Преобразуем строку в массив байтов
-            byte[] contentBytes = content.getBytes();
-            // Записываем массив байтов в файл
-            Files.write(Paths.get(filePath), contentBytes);
-            return content;
+            CardBalanceUpdate cbu = new CardBalanceUpdate();
+            cbu.balanceminus();
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
     }
 
-    public static String writeplus() {
+    public static void writeplus() {
         try {
-            // Путь к файлу
-            String filePath = Share.patchtocard();
-            // Строка, которую будем записывать в файл
-            //String content = "2548";
-            String content = ChangeBalance.nowmuchplus();
-            // Преобразуем строку в массив байтов
-            byte[] contentBytes = content.getBytes();
-            // Записываем массив байтов в файл
-            Files.write(Paths.get(filePath), contentBytes);
-            return content;
+            CardBalanceUpdate cbu = new CardBalanceUpdate();
+            cbu.balanceplus();
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
     }
 }
