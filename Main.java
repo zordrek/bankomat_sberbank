@@ -3,7 +3,7 @@ package sberbank;
 public class Main {
     public static void main(String[] args) {
         FirstPage fp = new FirstPage();
-        CardFromDB cfdb = new CardFromDB();
+        //CardFromDB cfdb = new CardFromDB();
 
         fp.sayHello();
 
